@@ -2,6 +2,7 @@ export default class DoubleSlider {
   element;
   subElements = {};
 
+<<<<<<< HEAD
 
   onThumbPointerMove = event => {
     
@@ -9,6 +10,13 @@ export default class DoubleSlider {
 
     const { left: innerLeft, right: innerRight, width } = this.subElements.inner.getBoundingClientRect();
     
+=======
+  onThumbPointerMove = event => {
+    event.preventDefault();
+
+    const { left: innerLeft, right: innerRight, width } = this.subElements.inner.getBoundingClientRect();
+
+>>>>>>> 7310925d42d085d9d66b4e340f23719ff7944d25
     if (this.dragging === this.subElements.thumbLeft) {
       let newLeft = (event.clientX - innerLeft + this.shiftX) / width;
 
@@ -23,7 +31,10 @@ export default class DoubleSlider {
       }
 
       this.dragging.style.left = this.subElements.progress.style.left = newLeft + '%';
+<<<<<<< HEAD
       console.log(this.subElements.from)
+=======
+>>>>>>> 7310925d42d085d9d66b4e340f23719ff7944d25
       this.subElements.from.innerHTML = this.formatValue(this.getValue().from);
     }
 
@@ -46,8 +57,11 @@ export default class DoubleSlider {
   };
 
   onThumbPointerUp = () => {
+<<<<<<< HEAD
     
     event.preventDefault()
+=======
+>>>>>>> 7310925d42d085d9d66b4e340f23719ff7944d25
     this.element.classList.remove('range-slider_dragging');
 
     document.removeEventListener('pointermove', this.onThumbPointerMove);
@@ -61,7 +75,11 @@ export default class DoubleSlider {
 
   constructor({
     min = 100,
+<<<<<<< HEAD
     max = 300,
+=======
+    max = 200,
+>>>>>>> 7310925d42d085d9d66b4e340f23719ff7944d25
     formatValue = value => '$' + value,
     selected = {
       from: min,
@@ -96,7 +114,10 @@ export default class DoubleSlider {
     element.innerHTML = this.template;
 
     this.element = element.firstElementChild;
+<<<<<<< HEAD
     //console.log(this.element)
+=======
+>>>>>>> 7310925d42d085d9d66b4e340f23719ff7944d25
     this.element.ondragstart = () => false;
 
     this.subElements = this.getSubElements(element);
@@ -119,7 +140,11 @@ export default class DoubleSlider {
 
     for (const subElement of elements) {
       const name = subElement.dataset.element;
+<<<<<<< HEAD
 console.log(name)
+=======
+
+>>>>>>> 7310925d42d085d9d66b4e340f23719ff7944d25
       result[name] = subElement;
     }
 
@@ -154,7 +179,10 @@ console.log(name)
     event.preventDefault();
 
     const { left, right } = thumbElem.getBoundingClientRect();
+<<<<<<< HEAD
     
+=======
+>>>>>>> 7310925d42d085d9d66b4e340f23719ff7944d25
 
     if (thumbElem === this.subElements.thumbLeft) {
       this.shiftX = right - event.clientX;
@@ -180,4 +208,8 @@ console.log(name)
 
     return { from, to };
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7310925d42d085d9d66b4e340f23719ff7944d25
