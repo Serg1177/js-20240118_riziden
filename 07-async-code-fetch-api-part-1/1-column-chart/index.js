@@ -101,7 +101,6 @@ export default class ColumnChart {
     this.element.classList.add('column-chart_loading');
 
     const data = await this.loadData(from, to);
-
     this.setNewRange(from, to);
 
     if (data && Object.values(data).length) {
